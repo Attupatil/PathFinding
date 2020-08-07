@@ -55,7 +55,7 @@ def printMaze(maze, path=""):
     for j, row in enumerate(maze):
         for i, col in enumerate(row):
             if (j, i) in pos:
-                print("+ ", end="")
+                print("^ ", end="")
             else:
                 print(col + " ", end="")
         print()
@@ -118,7 +118,7 @@ def findEnd(maze, moves):
     return False
 
 
-█ MAIN ALGORITHM
+# MAIN ALGORITHM
 
 nums = queue.Queue()
 nums.put("")
@@ -127,7 +127,7 @@ maze  = createMaze2()
 
 while not findEnd(maze, add): 
     add = nums.get()
-    █print(add)
+    #print(add)
     for j in ["L", "R", "U", "D"]:
         put = add + j
         if valid(maze, put):
