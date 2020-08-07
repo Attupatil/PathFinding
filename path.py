@@ -3,30 +3,29 @@ import queue
 
 def createMaze():
     maze = []
-    maze.append(["#","#", "#", "#", "#", "O","#"])
-    maze.append(["#"," ", " ", " ", "#", " ","#"])
-    maze.append(["#"," ", "#", " ", "#", " ","#"])
-    maze.append(["#"," ", "#", " ", " ", " ","#"])
-    maze.append(["#"," ", "#", "#", "#", " ","#"])
-    maze.append(["#"," ", " ", " ", "#", " ","#"])
-    maze.append(["#","#", "#", "#", "#", "X","#"])
+    maze.append(["█","█", "█", "█", "█", "O","█"])
+    maze.append(["█"," ", " ", " ", "█", " ","█"])
+    maze.append(["█"," ", "█", " ", "█", " ","█"])
+    maze.append(["█"," ", "█", " ", " ", " ","█"])
+    maze.append(["█"," ", "█", "█", "█", " ","█"])
+    maze.append(["█"," ", " ", " ", "█", " ","█"])
+    maze.append(["█","█", "█", "█", "█", "X","█"])
 
     return maze
 
 def createMaze2():
     maze = []
-    maze.append(["#","O", "#", "#", "#", "#", "#", "#", "#"])
-    maze.append(["#"," ", " ", " ", " ", " ", " ", " ", "#"])
-    maze.append(["#"," ", " ", " ", " ", " ", "#", "#", "#"])
-    maze.append(["#","#", "#", "#", "#", " ", "#", "#", "#"])
-    maze.append(["#"," ", " ", " ", " ", " ", " ", " ", "#"])
-    maze.append(["#"," ", "#", "#", " ", "#", "#", " ", "#"])
-    maze.append(["#"," ", "#", " ", " ", " ", "#", " ", "#"])
-    maze.append(["#"," ", "#", " ", "#", " ", "#", " ", "#"])
-    maze.append(["#"," ", "#", " ", "#", " ", "#", " ", "#"])
-    maze.append(["#"," ", "#", " ", "#", " ", "#", "#", "#"])
-    maze.append(["#"," ", " ", " ", " ", " ", " ", " ", "#"])
-    maze.append(["#","#", "#", "#", "#", "#", "#", "X", "#"])
+    maze.append(["█","█", "█", "█", "█", "O", "█", "█", "█"])
+    maze.append(["█"," ", " ", " ", " ", " ", " ", " ", "█"])
+    maze.append(["█"," ", "█", "█", " ", "█", "█", " ", "█"])
+    maze.append(["█"," ", "█", " ", " ", " ", "█", " ", "█"])
+    maze.append(["█"," ", "█", " ", "█", " ", "█", " ", "█"])
+    maze.append(["█"," ", "█", " ", "█", " ", "█", " ", "█"])
+    maze.append(["█"," ", "█", " ", "█", " ", "█", "█", "█"])
+    maze.append(["█"," ", " ", " ", " ", " ", " ", " ", "█"])
+    maze.append(["█"," ", "█", "█", "█", "█", "█", " ", "█"])
+    maze.append(["█"," ", " ", " ", " ", " ", "█", " ", "█"])
+    maze.append(["█","█", "█", "█", "█", "█", "█", "X", "█"])
 
     return maze
 
@@ -85,7 +84,7 @@ def valid(maze, moves):
 
         if not(0 <= i < len(maze[0]) and 0 <= j < len(maze)):
             return False
-        elif (maze[j][i] == "#"):
+        elif (maze[j][i] == "█"):
             return False
 
     return True
@@ -119,7 +118,7 @@ def findEnd(maze, moves):
     return False
 
 
-# MAIN ALGORITHM
+█ MAIN ALGORITHM
 
 nums = queue.Queue()
 nums.put("")
@@ -128,7 +127,7 @@ maze  = createMaze2()
 
 while not findEnd(maze, add): 
     add = nums.get()
-    #print(add)
+    █print(add)
     for j in ["L", "R", "U", "D"]:
         put = add + j
         if valid(maze, put):
